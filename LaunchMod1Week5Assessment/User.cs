@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User
+UserNamespace
 {
-    public class User
+    public class UserData
     {
         public string Name { get; private set; }
         public string Email { get; private set; }
         private string Password { get; set; }
         public bool IsLoggedIn { get; set; }
 
-        public User(string name, string email)
+        public UserData (string name, string email)
         {
             Name = name;
             Email = email;
             IsLoggedIn = false;
         }
 
-        public bool IsSetupComplete()
+        public bool Is_Setup_Complete()
         {
             if (Name != null && Email != null && Password != null)
             {
@@ -32,7 +32,7 @@ namespace User
             }
         }
 
-        public void CreatePassword(string email, string password)
+        public void Create_Password(string email, string password)
         {
             if (email == Email)
             {
@@ -45,7 +45,7 @@ namespace User
             }
         }
 
-        public string LogIn(string password)
+        public string Log_In(string password)
         {
             if (password == Password)
             {
@@ -55,7 +55,7 @@ namespace User
             return "Not Logged In";
         }
 
-        public void LogOut()
+        public void Log_Out()
         {
             IsLoggedIn = false;
         }
